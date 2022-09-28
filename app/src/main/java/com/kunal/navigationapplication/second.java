@@ -20,9 +20,6 @@ public class second extends Fragment {
 
 //       listView=view.findViewById(R.id.list);
 
-
-
-
         return view;
     }
 

@@ -1,20 +1,12 @@
 package com.kunal.navigationapplication;
 
-import android.content.Intent;
-import android.database.Cursor;
 import android.graphics.Color;
-import android.net.Uri;
 import android.os.Bundle;
-import android.provider.MediaStore;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -23,18 +15,8 @@ import androidx.appcompat.graphics.drawable.DrawerArrowDrawable;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.navigation.NavigationView;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
-import com.google.firebase.storage.UploadTask;
-
-import java.io.File;
-import java.lang.ref.Reference;
-import java.net.URI;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -135,27 +117,24 @@ public class MainActivity extends AppCompatActivity {
 //                text1.setVisibility(View.GONE);
             }
         });
-        getSupportFragmentManager().beginTransaction().replace(R.id.l,new first()).commit();
-        getSupportFragmentManager().beginTransaction().replace(R.id.l2,new second()).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.l, new first()).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.l2, new second()).commit();
         navigation.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
-                Fragment f=null;
-                if(item.getItemId()==R.id.name)
-                {
-                    f=new first();
+                Fragment f = null;
+                if (item.getItemId() == R.id.name) {
+                    f = new first();
                 }
-                if(item.getItemId()==R.id.info)
-                {
-                    f=new second();
+                if (item.getItemId() == R.id.info) {
+                    f = new second();
                 }
-                if(item.getItemId()==R.id.contact)
-                {
+                if (item.getItemId() == R.id.contact) {
 
                 }
 
-                getSupportFragmentManager().beginTransaction().replace(R.id.l,f).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.l, f).commit();
                 drawer.closeDrawers();
 
                 return false;
