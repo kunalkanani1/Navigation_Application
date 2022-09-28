@@ -117,8 +117,10 @@ public class MainActivity extends AppCompatActivity {
 //                text1.setVisibility(View.GONE);
             }
         });
+
         getSupportFragmentManager().beginTransaction().replace(R.id.l, new first()).commit();
-        getSupportFragmentManager().beginTransaction().replace(R.id.l2, new second()).commit();
+//        getSupportFragmentManager().beginTransaction().replace(R.id.l2, new second()).commit();
+
         navigation.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -131,7 +133,7 @@ public class MainActivity extends AppCompatActivity {
                     f = new second();
                 }
                 if (item.getItemId() == R.id.contact) {
-
+                    f = new third();
                 }
 
                 getSupportFragmentManager().beginTransaction().replace(R.id.l, f).commit();
