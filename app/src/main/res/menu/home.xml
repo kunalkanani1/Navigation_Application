@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/overflowmenu"
+        android:icon="@drawable/ic_baseline_more_vert_24"
+        android:title=""
+        app:showAsAction="always">
+
+        <menu>
+
+            <item
+                android:id="@+id/name"
+                android:icon="@drawable/ic_baseline_person_24"
+                android:title="Name"
+                app:iconTint="@color/design_default_color_primary" />
+
+            <item
+                android:id="@+id/info"
+                android:icon="@drawable/ic_baseline_info_24"
+                android:title="Info"
+                app:iconTint="@color/design_default_color_primary" />
+
+            <item
+                android:id="@+id/contact"
+                android:icon="@drawable/ic_baseline_help_24"
+                android:title="Contact Us"
+                app:iconTint="@color/design_default_color_primary" />
+
+        </menu>
+
+    </item>
+
+</menu>

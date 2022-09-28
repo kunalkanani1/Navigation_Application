@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "255292049188",
+    "project_id": "kunal-kanani",
+    "storage_bucket": "kunal-kanani.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:255292049188:android:5bcdd86ac82ad9ed3715b1",
+        "android_client_info": {
+          "package_name": "com.kunal.navigationapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "255292049188-detiqgb2kuhdms9lkapk5ebgvs665mdv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBLWhqprCUXCiQeHQVBcikzJXU7o4fcgS4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "255292049188-detiqgb2kuhdms9lkapk5ebgvs665mdv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
