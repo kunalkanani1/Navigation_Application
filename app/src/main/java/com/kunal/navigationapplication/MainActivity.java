@@ -18,7 +18,7 @@ import androidx.fragment.app.Fragment;
 
 import com.google.android.material.navigation.NavigationView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements myinterface {
 
     DrawerLayout drawer;
     Toolbar toolbar;
@@ -138,7 +138,6 @@ public class MainActivity extends AppCompatActivity {
 
                 getSupportFragmentManager().beginTransaction().replace(R.id.l, f).commit();
                 drawer.closeDrawers();
-
                 return false;
             }
         });
@@ -149,6 +148,31 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.home, menu);
         return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public void pass(String val) {
+        System.out.println("Hello");
+
+        Bundle b = new Bundle();
+        b.putString("item", val);
+
+        Fragment f = new second();
+        f.setArguments(b);
+
+        getSupportFragmentManager().beginTransaction().replace(R.id.l, f).addToBackStack(null).commit();
+    }
+
+    @Override
+    public void tranfer(String cate) {
+
+        Bundle b2 = new Bundle();
+        b2.putString("cate", cate);
+
+        Fragment f2 = new third();
+        f2.setArguments(b2);
+
+        getSupportFragmentManager().beginTransaction().replace(R.id.l, f2).addToBackStack(null).commit();
     }
 
 //    @Override
@@ -187,3 +211,18 @@ public class MainActivity extends AppCompatActivity {
 //    }
 
 }
+/*
+
+Activity -> activity -intent
+activity->fragment ->getsupp
+frg->activity   ->intent
+
+frg1->frg2
+1.frg1>activity
+2.activity->frg2
+
+interface create
+implement -> activty
+call interface function in frg1
+
+ */

@@ -18,6 +18,7 @@ public class first extends Fragment {
     ListView listView;
     ArrayAdapter arrayAdapter;
     String[] arr = {"one", "two", "three", "four", "five"};
+    myinterface m;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -34,10 +35,14 @@ public class first extends Fragment {
         arrayAdapter = new ArrayAdapter(getContext(), R.layout.myfile, R.id.city, arr);
         listView.setAdapter(arrayAdapter);
 
+        m = (myinterface) getContext();
+
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Toast.makeText(getContext(), arr[i], Toast.LENGTH_SHORT).show();
+                m.pass(arr[i]);
+
             }
         });
 
